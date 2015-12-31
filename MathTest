@@ -1,0 +1,22 @@
+public class MathTest {
+
+	public static  int getResult(int num1, int num2){
+        int result = 0;
+
+        int tem = num1;//移位后的num1
+        int mod = 0;//余数
+        int count = 0;//移动的位数
+
+        while(tem != 0){
+
+            mod = tem % 10;//余数
+
+            count++;//移动的位数自加
+
+            result += mod * (10 ^ count) * num2;
+
+            tem = tem >> 1;
+        }
+        return  result;
+    }
+}
